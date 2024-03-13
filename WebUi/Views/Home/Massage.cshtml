@@ -1,0 +1,50 @@
+﻿@model WebUi.Controllers.MassageViewModel
+
+@{
+    ViewData["Title"] = "Massage Page";
+}
+
+<div class="container_wrapper">
+    <div class="breadcums_block">
+        <ol class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li>@Model.EscortsNavTitle</li>
+        </ol>
+    </div>
+
+    <div class="main_container featured_escort">
+        <div class="header_block">
+            <h1>Las Vegas <span>@Model.PositionMassageTitle</span> Escorts</h1>
+        </div>
+        <div class="text_info_block">
+            @Html.Raw(Model.PositionMassageTop)
+        </div>
+        <div class="sincity_display_escorts">
+            <div class="row">
+                @foreach (var p in Model.List)
+                {
+                    var refName = $"{p.EscortName.ToLower()}.php";
+                    var fileName = p.FileImages.First().FileName;
+                    <div class="col-xs-12 col-sm-4 col-md-3">
+                        <div class="escort_display">
+                            <div class="image_wrapper">
+                                <a title="Yoko's profile" href="/escort-profile/@refName">
+                                    <div class="escort_name">@p.EscortName</div>
+                                    <div class="escort_img">
+                                        <img class="img-responsive" style="max-height: 318px;"
+                                             src="/images/escort/@fileName"
+                                             alt="@p.EscortName" title="@p.EscortName">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="main_container">
+        @Html.Raw(Model.PositionMassageBottom)
+    </div>
+</div>

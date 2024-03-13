@@ -1,0 +1,162 @@
+﻿@using Domain.Models
+@model ProfileViewModel
+
+@{
+    ViewData["Title"] = "Profile Page";
+}
+
+<div class="container_wrapper">
+   
+    <div class="breadcums_block">
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">@Model.EscortName</li>
+        </ol>
+    </div>  
+        
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+
+            <div class="main_container featured_escort">
+                <div class="header_block">
+                    <h1><span>About</span> @Model.EscortName</h1>
+                </div>
+
+                <div class="row inner_container">
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="profile_preview_img">
+                               @if (Model.IsVideo)
+                               {
+                                   <video class="playvid" controls>
+                                       <source src="/video/@Model.VideoFile" type="video/mp4">  
+                                       Your browser does not support HTML video.
+                                   </video>
+                               }
+                               else
+                               {
+                                   <img class="img-responsive" src="/images/escort/@Model.FileImages.First().FileName" 
+                                        alt="@Model.EscortName - las vegas escorts" 
+                                        title="@Model.EscortName - las vegas escorts" width="480" />
+                               }  
+                        </div>
+                        <div class="thumb_img">
+                            @foreach (var p in Model.FileImages)
+                            {
+                                <a class="fancybox" data-fancybox-group="escorts"
+                                   href="~/images/escort/@p.FileName">
+                                    <img src="~/images/escort/@p.FileName" alt="@Model.EscortName"
+                                         title="@Model.EscortName" width="89" class="img-responsive">
+                                </a>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <div class="profile_information">
+                            <div class="filter_block">
+                                <div class="filter_block_title">
+                                    <h4>Profile</h4>
+                                </div>
+                                <div class="filter_block_content">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tr>
+                                                <td width="30%"><strong>Age:</strong></td>
+                                                <td width="70%">@Model.Age</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Nationality:</strong></td>
+                                                <td>@Model.Nationality</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Weight:</strong></td>
+                                                <td>@Model.Weight lbs</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Height:</strong></td>
+                                                <td>@Model.Height</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Hair:</strong></td>
+                                                <td>@Model.Hair</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Languages:</strong></td>
+                                                <td>@Model.Languages</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Statstics:</strong></td>
+                                                <td>@Model.Statistics</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="profile_about_block">
+                                <div class="filter_block_title">
+                                    <h4>Description</h4>
+                                </div>
+                                <p>@Html.Raw(Model.Description)</p>
+                            </div>
+                            <div class="filter_block">
+                                <div class="filter_block_title">
+                                    <h4>Booking</h4>
+                                </div>
+                                <div class="filter_block_content booking_content">
+                                    <p>
+                                        Click to call: <strong>
+                                            <span itemprop="telephone">
+                                                <a onclick="_gaq.push(['_trackEvent', 'Click', 'Click to Dial: 702-209-3734', '#Product ID'])"
+                                                   href="tel:+1702-766-5315">702-766-5315</a>
+                                            </span>
+                                        </strong><br />
+                                        <a href="/booking.php">Online booking form</a>
+                                    </p><br /> <br />
+                                </div>
+                            </div>
+                            <div class="filter_block">
+                                <div class="filter_block_title">
+                                    <h4>Direction</h4>
+                                </div>
+                                <div class="filter_block_content booking_content">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="main_container">
+
+                <div class="sea_also_block">
+                    <div class="header_block">
+                        <h1><span>See</span> Also</h1>
+                    </div>
+
+                    <div class="sincity_display_escorts">
+                        <div class="row">
+                            @foreach (var p in Model.List)
+                            {
+                                var fileName = p.FileImages.First().FileName;
+                                var refName = $"{p.EscortName.ToLower()}.php";
+                                <div class="col-xs-12 col-sm-4 col-md-3">
+                                    <div class="escort_display">
+                                        <div class="image_wrapper">
+                                            <a href="/profile/@refName">
+                                                <div class="escort_img">
+                                                    <img class="img-responsive" src="~/images/escort/@fileName" alt="" title="">
+                                                </div>
+                                                <div class="escort_name">@p.EscortName</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            @await Html.PartialAsync("_bottomInformation")
+        </div>
+    </div> 
+</div>

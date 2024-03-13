@@ -1,0 +1,44 @@
+Site 12.2.222.14
+
+https://www.dreamgirlsphoenix.com
+
+https://www.dreamgirlsphoenix.com/inventory/login.php
+dreamphoenix
+sP@2017!
+
+$mail->SMTPDebug = 1;
+$mail->IsSMTP();
+$mail->Host = 'smtp.office365.com';
+$mail->Port = 587; 
+$mail->SMTPAuth = true;
+$mail->Username = 'donotreply@vegasstronger.vegas';
+$mail->Password = 'Z326050r$';
+$mail->SMTPSecure = 'tls';
+
+  "EmailSettings": {
+    "MailServer": "outlook.office365.com",
+    "MailPort": 587,
+    "SenderName": "Welcome Center",
+    "Sender": "welcome@vegasstronger.vegas",
+    "Password": "W2020c$$$"
+  }
+  //google
+   "EmailSettings": {
+    "MailServer": "smtp.gmail.com",
+    "MailPort": 465,
+    "SenderName": "www.dreamgirlsphoenix.com",
+    "Sender": "maxim.paramonov.ua@gmail.com",
+    "Password": "gqbcygkmatozdhwz"
+  }
+
+
+  распологаем новые сайты на .142
+  берем с .6 и .213? и 184
+
+  исходник на 50.62.56.184
+
+Это доступы к серверу где сайт sincityexperience.com
+RDP access below:
+12.31.235.150
+Administrator
+Z314050r$

@@ -1,0 +1,5 @@
+На сайте есть три поддомена. Все они должны перейти на основной домен с 301 перенаправлением:
+
+https://fetish.sincityexperience.com/ >>> 301 >>> https://www.sincityexperience.com/fetish.php
+https://fetish.sincityexperience.com/foot-fetish.php >>> 301 >>> https://www.sincityexperience.com/foot-fetish.php
+https://backpage.sincityexperience.com/ >>> 301 >>> https://www.sincityexperience.com/backpage.php

@@ -280,12 +280,20 @@
                         </nav>
                     </div>
                 </div><div class="main_container_block escorts_display_page">
-                    <div class="breadcums_block" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                    @* <div class="breadcums_block"  >
                         <ol class="breadcrumb">
-                            <li><a itemprop="url" href="/"><span itemprop="title">Home</span></a></li>
-                            <li class="active"><span itemprop="title">Liverpool Escorts</span></li>
+                            <li><a  href="/"><span >Home</span></a></li>
+                            <li class="active"><span >Liverpool Escorts</span></li>
                         </ol>
-                    </div>
+                    </div> *@
+                    @{
+                        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+                    }
+
+                    @if (breadcrumbs != null)
+                    {
+                        <partial name="_Breadcrumbs" model="breadcrumbs" />
+                    }
                     <h1 class="heading">Liverpool escorts services for you</h1>
                     <div class="container_area border_radius bg_boston">
                         <div class="custom_content_block clearfix">

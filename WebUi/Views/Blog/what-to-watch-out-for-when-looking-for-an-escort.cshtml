@@ -1,11 +1,19 @@
 ﻿<div class="container_wrapper">
-    <div class="breadcums_block">
+    @* <div class="breadcums_block">
         <ol class="breadcrumb">
             <li><a href="/">Home</a></li>
             <li><a href="../blog.php">Blog</a></li>
             <li>What to watch out for when looking for an petite escort</li>
         </ol>
-    </div>
+    </div> *@
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
+
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
     <div class="main_container">
         <div class="header_block">
             <h1><span>What to watch out for when </span>looking for an petite escort</h1>
@@ -13,7 +21,7 @@
         <div class="sincity_blog_part">
             <div class="text_info_block blog_article_details_block clearfix">
                 <div class="text_image_right">
-                    <img src="img/blog-img-1.jpeg" alt="What to watch out for when looking for an petite escort" title="What to watch out for when looking for an petite escort" class="img-responsive">
+                    <img src="/img/blog-img-1.jpeg" alt="What to watch out for when looking for an petite escort" title="What to watch out for when looking for an petite escort" class="img-responsive">
                 </div>
                 <p>Anytime you are in Las Vegas, be it for business or vacation, your stay can be made memorable if you hire a petite escort. She will become an asset when you want a date to take to a business dinner. You will also have great company as you explore the city. What’s more, you can have an adventurous and exotic holiday. However, for you to have a great experience, you need to make certain considerations.</p>
                 <h2><span>Understand what is offered</span></h2>

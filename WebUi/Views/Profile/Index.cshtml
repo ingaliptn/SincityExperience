@@ -7,13 +7,20 @@
 
 <div class="container_wrapper">
    
-    <div class="breadcums_block">
+    @* <div class="breadcums_block">
         <ol class="breadcrumb">
             <li><a href="/">Home</a></li>
             <li class="active">@Model.EscortName</li>
         </ol>
-    </div>  
-        
+    </div>  *@
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
+
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
 
@@ -106,7 +113,7 @@
                                         Click to call: <strong>
                                             <span itemprop="telephone">
                                                 <a onclick="_gaq.push(['_trackEvent', 'Click', 'Click to Dial: 702-209-3734', '#Product ID'])"
-                                                   href="tel:+1702-766-5315">702-766-5315</a>
+                                                   href="tel:+1702-577-1199">702-577-1199</a>
                                             </span>
                                         </strong><br />
                                         <a href="/booking.php">Online booking form</a>

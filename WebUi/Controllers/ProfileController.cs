@@ -45,7 +45,9 @@ namespace WebUi.Controllers
             var escorts = await GetAllEscorts();
             //var texts = await GetAllTexts();
 
+
             var escort = escorts.FirstOrDefault(z => z.EscortName.ToLower() == name);
+
 
             if (escort == null) return RedirectToAction("Error", "Home");
 
@@ -60,7 +62,7 @@ namespace WebUi.Controllers
                 m.List.Add(list[r]);
                 if (m.List.Count == 8) break;
             }
-            m.List = m.List.Where(z=>z.Id != escort.Id).DistinctBy(z => z.Id).Take(4).ToList();
+            m.List = m.List.Where(z => z.Id != escort.Id).DistinctBy(z => z.Id).Take(4).ToList();
 
             //ViewBag.BackGroundImage = $"{WorkLib.GetRandomNumber(2, 15)}.jpg";
             ViewBag.CanonicalUrl = GetCanonicalUrl();
@@ -69,9 +71,24 @@ namespace WebUi.Controllers
             //    .FirstOrDefault();
             //ViewBag.SiteDescription = texts.Where(z => z.Position == $"SiteDescriptionProfile-{escort.EscortId}").Select(z => z.Description)
             //    .FirstOrDefault();
+            if (name == "Aleха")
+            {
+                ViewBag.SiteTitle = $"Alexa - one of our Las Vegas TS Escorts - Sin City Experience";
+                ViewBag.SiteDescription = $"Alexa. TS escort service in Las Vegas, Nevada direct to your room - Sin City Experience";
+            }
+            else
+            {
+                ViewBag.SiteTitle = $"{escort.EscortName} – one of the finest Las Vegas Escorts. Choose one of our beautiful escorts – Sin City Experience";
+                ViewBag.SiteDescription = $"{escort.EscortName}. Escort service in Las Vegas, Nevada direct to your room — Sin City Experience";
+            }
 
-            ViewBag.SiteTitle = $"{escort.EscortName} – one of the finest Las Vegas Escorts. Choose one of our beautiful escorts – Sin City Experience";
-            ViewBag.SiteDescription = $"{escort.EscortName}. Escort service in Las Vegas, Nevada direct to your room — Sin City Experience";
+            // Оголошуємо список breadcrumbs один раз
+            var breadcrumbs = new List<BreadcrumbItem>
+            {
+                new BreadcrumbItem { Name = "Las Vegas Escorts", Url = "/" },
+            };
+            breadcrumbs.Add(new BreadcrumbItem { Name = @escort.EscortName, Url = "/"+ @escort.EscortName.ToLower() });
+            ViewData["Breadcrumbs"] = breadcrumbs;
 
             switch (escort.EscortName)
             {
@@ -124,23 +141,13 @@ namespace WebUi.Controllers
                     m.VideoFile = "helena-sincity.mp4";
                     break;
 
-                //default:
-                //    return RedirectToAction("Error","Home");
+                    //default:
+                    //    return RedirectToAction("Error","Home");
             }
 
             return View(m);
         }
 
-
-        //[Route("{name}")]
-        //public async Task<IActionResult> RedirectProfile301(string name)
-        //{
-        //    var escorts = await GetAllEscorts();
-            
-        //    var f = escorts.Any(z => z.EscortName == name);
-        //    if (f) return RedirectPermanent($"escorts-profile/{name.ToLower()}");
-        //    return RedirectToPage("Home","404.php");
-        //}
 
         private string GetCanonicalUrl()
         {

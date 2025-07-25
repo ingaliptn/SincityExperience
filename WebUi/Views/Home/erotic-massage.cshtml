@@ -1,11 +1,19 @@
 ﻿@using WebUi.Lib
 <div class="container_wrapper">
-    <div class="breadcums_block">
+    @* <div class="breadcums_block">
         <ol class="breadcrumb">
-            <li><a href="/" itemprop="url">Home</a></li>
+            <li><a href="/" >Home</a></li>
             <li>Erotic Massage</li>
         </ol>
-    </div>
+    </div> *@
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
+
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12">
             <div class="main_container featured_escort">

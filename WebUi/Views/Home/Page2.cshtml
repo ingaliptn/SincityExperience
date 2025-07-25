@@ -4,15 +4,22 @@
 
 <div class="main_container_block escorts_display_page">
 
-    <div class="breadcums_block">
+    @* <div class="breadcums_block">
         <ol class="breadcrumb">
             <li><a title="Erotic massage" href="/"><span>Erotic Massage</span></a></li>
             <li><a title="Erotic Massage Blog" href="/blog.php"><span>Blog</span></a></li>
             <li class="active"><span>Page 2</span></li>
         </ol>
-    </div>
+    </div> *@
 
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
 
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
     <h1 class="heading">Erotic Massage Blog</h1>
 
     <div class="container_area border_radius bg_boston">

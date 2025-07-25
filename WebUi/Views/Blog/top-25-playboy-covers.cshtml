@@ -1,11 +1,19 @@
 ﻿<div class="container_wrapper">
-    <div class="breadcums_block">
+    @* <div class="breadcums_block">
         <ol class="breadcrumb">
             <li><a href="/">Home</a></li>
             <li><a href="../blog.php">Blog</a></li>
             <li>Top 25 Playboy covers</li>
         </ol>
-    </div>
+    </div> *@
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
+
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
     <div class="main_container">
         <div class="header_block">
             <h1><span>Top 25 </span>Playboy covers</h1>

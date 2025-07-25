@@ -1,0 +1,48 @@
+﻿@model List<WebUi.Models.BreadcrumbItem>
+
+<div class="container_wrapper">
+    @if (Model != null && Model.Any())
+    {
+        <div class="breadcums_block">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    @for (var i = 0; i < Model.Count; i++)
+                    {
+                        var breadcrumb = Model[i];
+                        if (!string.IsNullOrEmpty(breadcrumb.Url) && i != Model.Count - 1)
+                        {
+                            <li class="breadcrumb-item">
+                                <a href="@breadcrumb.Url">@breadcrumb.Name</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="breadcrumb-item active" aria-current="page">@breadcrumb.Name</li>
+                        }
+                    }
+                </ol>
+            </nav>
+        </div>
+
+        <!-- JSON-LD structured data -->
+        <script type="application/ld+json">
+            @{
+                var breadcrumbList = new
+                {
+                    @@context = "https://schema.org",
+                @type = "BreadcrumbList",
+                itemListElement = Model.Select((item, index) => new
+                {
+                    @@type= "ListItem",
+                    position = index + 1,
+                    name = item.Name,
+                    item = string.IsNullOrEmpty(item.Url) ? null : item.Url
+                       })
+            };
+
+        var jsonLd = Newtonsoft.Json.JsonConvert.SerializeObject(breadcrumbList, Newtonsoft.Json.Formatting.Indented);
+        }
+        @Html.Raw(jsonLd)
+    </script>
+    }
+</div>

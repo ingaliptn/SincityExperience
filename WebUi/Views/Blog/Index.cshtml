@@ -4,13 +4,20 @@
 
 <div class="main_container_block escorts_display_page">
 
-    <div class="breadcums_block">
+    @* <div class="breadcums_block">
         <ol class="breadcrumb">
             <li><a href="/">Home</a></li>
             <li class="active">Blog</li>
         </ol>
-    </div>
+    </div> *@
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
 
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
 
     <h1 class="heading">Default</h1>
 

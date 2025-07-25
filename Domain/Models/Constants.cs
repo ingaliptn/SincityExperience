@@ -380,10 +380,10 @@
         //https://www.sincityexperience.com/
         public const string SiteNameSsl = "www.sincityexperience.com";
         public const string SiteName = "www.sincityexperience.com";
-        public const string SitePhone = "(702) 766-5315";
-        public const string SitePhoneRef = "+17027665315";
+        public const string SitePhone = "(702) 577-1199";
+        public const string SitePhoneRef = "+17025771199";
         public const string SiteEmail = "info@vegasmassagegirls.com";
-        public const string SiteContentLocation = "Las Vegas";
+        public const string SiteContentLocation = "Las Vegas"; //
         public const string SiteCountry = "USA";
         public const string SiteDreamGirlsLocation = "Las Vegas Massage Girls";
     }

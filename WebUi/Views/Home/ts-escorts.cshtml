@@ -1,0 +1,105 @@
+﻿@using WebUi.Lib
+<div class="container_wrapper">
+    @* <div class="breadcums_block">
+        <ol class="breadcrumb">
+            <li><a href="/" >Home</a></li>
+            <li>TS Escorts</li>
+        </ol>
+    </div> *@
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
+
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="main_container featured_escort">
+                <div class="header_block">
+                    <h1>The Most Seductive Desired TS Escorts</h1>
+                </div>
+
+                <div class="sincity_display_escorts">
+                    <div class="row">
+                        <!--new-->
+
+                        <div class="col-xs-12 col-sm-4 col-md-3">
+                            <div class="escort_display">
+                                <div class="image_wrapper">
+                                    <div class="animate_icon_new">
+                                        <!-- <img src="/images/new_icon_animated.gif" alt=""> -->
+                                        <img src="/images/verified.png" alt="">
+                                    </div>
+                                    <a title="Escort Alexa" href="@ProfileLib.GetUrl(322)">
+                                        <div class="escort_name">Alexa</div>
+                                        <div class="escort_img">
+                                            <img class="img-responsive" loading="lazy" src="/images/escort/1Alexa.jpg" alt="Alexa" title="Alexa">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                        <!--new end-->
+                    </div>
+                </div>
+            </div>
+            <div class="main_container">
+                <div class="info_video_block">
+
+                    <p>Are your impatiently searching for that perfect partner? The one who knows how to be a lady in public and a sex god in bed. Sin City Experience is the place where fantasies become realities. You come across some of the most sophisticated, lust-worthy trans escorts you have ever set eyes on.</p>
+                    <p>Your preference might be that perfect transsexual escorts in Las Vegas who you can take to a dinner date or a function, completely passable as a female. Just in case your worried about friends or family finding out your secret.</p>
+                    <p>Or maybe you want that one confident shemale who blazes through everything she touches! Party animal and a freak in the bed. Whatever your appetite Sin City Experience is the go to place to make memorable memories that you will cherish for a very long time.</p>
+                    
+                    <h2><span>Selection of Irresistible TS Escorts in The World</span></h2>
+                    <p>Sin City Experience has a variety of beautiful TS escorts of Las Vegas for you to take your pick from. Whenever you’re a first timer or a experienced clientele. We have shemale escorts who cater for The most elegant GFE experience or BDSM fantasies. We have TS escorts for all sort of tastes and fantasies. You can always expect nothing but discretion when dealing with anyone of our Transsexual escorts. Here on our Sin City Experience site we only have the most renowned TS escorts from all over the world at your fingertips. So don’t wait your just a click or phone call away from your dreams becoming reality.</p>
+                    <p>You must remember these points as you plan a bachelor party: </p>
+                    
+                    <h2><span>The forefront of Las Vegas transsexual escorts</span></h2>
+                    
+                    <p>In a world that moves so fast and things change so quickly. We have some of the most elegant T-Girl Escorts from all corners of the globe. The layout of the website makes it easy for you to browse and filter the type of appearance which appeals to you.</p>
+                    <p>Maybe you are looking for a blonde or brunette. Tall or short ladyboy escorts in your area. So you can search for Las Vegas TS escorts closest to your location. All you simply have to do is to call us. This is just a few reasons why we are at the forefront of Transsexual escorts.</p>
+                    
+                    <h2><span>Booking your dream TS escort has never been so simple</span></h2>
+                    
+                    <p>Our Sin City Experience platform has made it so easy for potential clients to make a booking. You have the phone number clearly displayed and booking info can also be found on all the shemale profiles.</p>
+                    <p>Our online portal has the largest transsexual escort directory. All profiles are up to date and verified, You will never come across a profile that has not got recent pics or missing information.</p>
+
+                    <div class="recent_post_part">
+                        <h3>Recent Posts</h3>
+                        <div class="recent_post_title_list">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <ul>
+                                        <li><a href="/blog/hire-agency-escort.php">Why Hire Las Vegas Escort Girls From Agency</a></li>
+                                        <li><a href="/blog/go-with-escort.php">Where To Go With Escort in Las Vegas</a></li>
+                                        <li><a href="/blog/escort-hotels.php">Las Vegas Escort Friendly Hotels</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-4">
+                                    <ul>
+                                        <li><a href="/blog/are-escorts-legal.php">Are Escorts Legal in Las Vegas</a></li>
+                                        <li><a href="/blog/fun-with-escorts.php">How to Have a Great Fun With Las Vegas Escorts</a></li>
+                                        <li><a href="/blog/how-do-escort-services-work.php">How do escort services work</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-4">
+                                    <ul>
+                                        <li><a href="/blog/how-much-are-las-vegas-escort-prices.php">How much are Las Vegas escort prices?</a></li>
+                                        <li><a href="/blog/your-nightlife-guide-to-las-vegas.php">Your nightlife guide to Las Vegas</a></li>
+                                        <li><a href="/blog/newbies-guide-to-escorts.php">The Newbies Guide to Escorts in Las Vegas</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @await Html.PartialAsync("_bottomInformation")
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,19 +5,26 @@
 }
 
 <div class="main_container_block escorts_display_page">
-    @*<div class="breadcums_block" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+    @*<div class="breadcums_block"  >
         <ol class="breadcrumb">
-            <li><a itemprop="url" href="/"><span itemprop="title">Home</span></a></li>
-            <li class="active"><span itemprop="title">@Model.EscortsNavTitle</span></li>
+            <li><a  href="/"><span >Home</span></a></li>
+            <li class="active"><span >@Model.EscortsNavTitle</span></li>
         </ol>
     </div>*@       
-    <div class="breadcums_block">
+    @* <div class="breadcums_block">
         <ol class="breadcrumb">
             <li><a href="/">Home</a></li>
             <li class="active">@Model.EscortsNavTitle</li>
         </ol>
-    </div>
+    </div> *@
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
 
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
 
     @*<h1 class="heading">@Model.EscortsHeading</h1>*@
 

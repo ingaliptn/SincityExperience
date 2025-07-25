@@ -3,13 +3,21 @@
 }  
 
 <div class="container_wrapper">
-    <div class="breadcums_block">
-        <ol class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+    @* <div class="breadcums_block">
+        <ol class="breadcrumb"  >
             <li><a href="/">Home</a></li>
             <li><a href="../blog.php">Blog</a></li>
             <li>Are Escorts Legal</li>
         </ol>
-    </div>
+    </div> *@
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
+
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
     <div class="main_container">
         <div class="header_block">
             <h1><span>Are Escorts </span>Legal in Las Vegas</h1>

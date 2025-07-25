@@ -6,12 +6,20 @@
 }
 
 <div class="container_wrapper">
-    <div class="breadcums_block">
+    @* <div class="breadcums_block">
         <ol class="breadcrumb">
             <li><a href="/">Home</a></li>
             <li class="active">Site Map</li>
         </ol>
-    </div>
+    </div> *@
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
+
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
 
     <div class="main_container featured_escort">
         <div class="header_block">
@@ -105,6 +113,7 @@
                 <li><a href="@ProfileLib.GetUrl(48)">Linda</a></li>
                 <li><a href="@ProfileLib.GetUrl(49)">Missy</a></li>
                 <li><a href="@ProfileLib.GetUrl(50)">Riley</a></li>
+                <li><a href="@ProfileLib.GetUrl(322)">Alexa</a></li>
             </ul>
             <h2><span>Blog Posts</span></h2>
             <ul class="unorder_list_disc">

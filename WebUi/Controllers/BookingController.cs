@@ -33,7 +33,7 @@ namespace WebUi.Controllers
 #if DEBUG
         //private readonly List<string> _emailsList = new(new string[] { "pmx@ukr.net", "nc@ukr.net", "ncmail@ukr.net", "maxim.paramonov.ua@gmail.com" });
         //private readonly List<string> _emailsList = new(new string[] { "v.bokhonov@serverpipe.com", "v.bokhonov@gmail.com", "vbokhonov@outlook.com", "stef.haeb34@hotmail.com" });
-        private readonly List<string> _emailsList = new(new string[] { "pmx@ukr.net" });
+        private readonly List<string> _emailsList = new(new string[] { "bookings@usescortagency.com", "support@usescortagency.com" });
 #else
         private readonly List<string> _emailsList = new(new string[] { "support@usescortagency.com", "bookings@usescortagency.com" });
         //private readonly List<string> _emailsList = new(new string[] { "v.bokhonov@serverpipe.com", "v.bokhonov@gmail.com", "vbokhonov@outlook.com", "stef.haeb34@hotmail.com" });
@@ -80,6 +80,14 @@ namespace WebUi.Controllers
 
             ViewBag.SiteTitle = "Book Escort At SinCityExperience";
             ViewBag.SiteDescription = "Book Escort. The hottest girls in Las Vegas direct to your room — SinCityExperience";
+            
+            // Оголошуємо список breadcrumbs один раз
+            var breadcrumbs = new List<BreadcrumbItem>
+            {
+                new BreadcrumbItem { Name = "Las Vegas Escorts", Url = "/" },
+            };
+            breadcrumbs.Add(new BreadcrumbItem { Name = "Booking", Url = "/booking.php" });
+            ViewData["Breadcrumbs"] = breadcrumbs;
 
             //ViewBag.MenuEscorts = await GetAllMenu();
             //ViewBag.GoogleAnalyticsObject = texts.Where(z => z.Position == "GoogleAnalyticsObject").Select(z => z.Description)
@@ -102,6 +110,14 @@ namespace WebUi.Controllers
             ViewBag.SiteTitle = "Contact SinCityExperience Agency";
             ViewBag.SiteDescription = "Contact Us. The hottest girls in Las Vegas direct to your room — SinCityExperience";
 
+            // Оголошуємо список breadcrumbs один раз
+            var breadcrumbs = new List<BreadcrumbItem>
+            {
+                new BreadcrumbItem { Name = "Las Vegas Escorts", Url = "/" },
+            };
+            breadcrumbs.Add(new BreadcrumbItem { Name = "Contact", Url = "/contact.php" });
+            ViewData["Breadcrumbs"] = breadcrumbs;
+
             //ViewBag.MenuEscorts = await GetAllMenu();
             //ViewBag.GoogleAnalyticsObject = texts.Where(z => z.Position == "GoogleAnalyticsObject").Select(z => z.Description)
             //    .FirstOrDefault();
@@ -119,6 +135,14 @@ namespace WebUi.Controllers
 
             ViewBag.SiteTitle = "Frequently Asked Questions — SinCityExperience";
             ViewBag.SiteDescription = "Frequently Asked Questions. The hottest girls in Las Vegas direct to your room — SinCityExperience";
+            
+            // Оголошуємо список breadcrumbs один раз
+            var breadcrumbs = new List<BreadcrumbItem>
+            {
+                new BreadcrumbItem { Name = "Las Vegas Escorts", Url = "/" },
+            };
+            breadcrumbs.Add(new BreadcrumbItem { Name = "FAQ", Url = "/faq.php" });
+            ViewData["Breadcrumbs"] = breadcrumbs;
 
             return View();
         }
@@ -134,6 +158,14 @@ namespace WebUi.Controllers
             ViewBag.SiteTitle = "Site Map - SinCityExperience agency";
             ViewBag.SiteDescription = "Navigate pages of SinCityExperience here on our Site Map. You'll find full list of links to pages here on sincityexperience.com";
             
+            // Оголошуємо список breadcrumbs один раз
+            var breadcrumbs = new List<BreadcrumbItem>
+            {
+                new BreadcrumbItem { Name = "Las Vegas Escorts", Url = "/" },
+            };
+            breadcrumbs.Add(new BreadcrumbItem { Name = "Sitemap", Url = "/sitemap.php" });
+            ViewData["Breadcrumbs"] = breadcrumbs;
+
             return View();
         }
 
@@ -150,6 +182,14 @@ namespace WebUi.Controllers
 
             ViewBag.SiteTitle = "About Escort Agency In Las Vegas SinCityExperience";
             ViewBag.SiteDescription = "We, as an escort agency in Las Vegas take pride in keeping a high rate of loyal clients. Call us now - SinCityExperience";
+
+            // Оголошуємо список breadcrumbs один раз
+            var breadcrumbs = new List<BreadcrumbItem>
+            {
+                new BreadcrumbItem { Name = "Las Vegas Escorts", Url = "/" },
+            };
+            breadcrumbs.Add(new BreadcrumbItem { Name = "About", Url = "/about.php" });
+            ViewData["Breadcrumbs"] = breadcrumbs;
 
             //ViewBag.MenuEscorts = await GetAllMenu();
             //ViewBag.GoogleAnalyticsObject = texts.Where(z => z.Position == "GoogleAnalyticsObject").Select(z => z.Description)
@@ -168,6 +208,14 @@ namespace WebUi.Controllers
 
             ViewBag.BackGroundImage = $"{WorkLib.GetRandomNumber(2, 14)}.jpg";
             ViewBag.CanonicalUrl = GetCanonicalUrl();
+
+            // Оголошуємо список breadcrumbs один раз
+            var breadcrumbs = new List<BreadcrumbItem>
+            {
+                new BreadcrumbItem { Name = "Las Vegas Escorts", Url = "/" },
+            };
+            breadcrumbs.Add(new BreadcrumbItem { Name = "Terms Of Service", Url = "/terms-of-service.php" });
+            ViewData["Breadcrumbs"] = breadcrumbs;
 
             ViewBag.SiteTitle = texts.Where(z => z.Position == "SiteTitleContact").Select(z => z.Description)
                 .FirstOrDefault();
@@ -193,6 +241,14 @@ namespace WebUi.Controllers
 
             ViewBag.SiteTitle = "Join Sin City — Sin City Experience";
             ViewBag.SiteDescription = "Join Sin City. The hottest girls in Las Vegas direct to your room — Sin City Experience";
+            
+            // Оголошуємо список breadcrumbs один раз
+            var breadcrumbs = new List<BreadcrumbItem>
+            {
+                new BreadcrumbItem { Name = "Las Vegas Escorts", Url = "/" },
+            };
+            breadcrumbs.Add(new BreadcrumbItem { Name = "Join", Url = "/join.php" });
+            ViewData["Breadcrumbs"] = breadcrumbs;
 
             return View(m);
         }

@@ -6,14 +6,21 @@
 
 <div class="main_container_block escorts_display_page">
 
-    <div class="breadcums_block">
+    @* <div class="breadcums_block">
         <ol class="breadcrumb">
             <li><a title="Erotic massage" href="/"><span>Home</span></a></li>
             <li><a title="Erotic Massage Blog" href="/blog/"><span>Blog</span></a></li>
             <li class="active"><span>Couples Massage</span></li>
         </ol>
-    </div>
+    </div> *@
+    @{
+        var breadcrumbs = ViewData["Breadcrumbs"] as List<WebUi.Models.BreadcrumbItem>;
+    }
 
+    @if (breadcrumbs != null)
+    {
+        <partial name="_Breadcrumbs" model="breadcrumbs" />
+    }
 
     <h1 class="heading">Las Vegas massage for couples</h1>
 
